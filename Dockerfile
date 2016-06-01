@@ -1,5 +1,5 @@
 FROM debian:jessie-backports
-RUN apt-get update && apt-get -y install opensmtpd opensmtpd-extras && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get -y install opensmtpd opensmtpd-extras ca-certificates && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
 
