@@ -21,13 +21,8 @@ RUN  cd opensmtpd-extras* && \
         --with-pie \
         --with-filter-stub \
         --with-queue-ram && \
-    make && \
+    make all && \
     make install
-
-RUN mv /usr/local/libexec/opensmtpd/filter-dkim-signer /usr/lib/x86_64-linux-gnu/opensmtpd/filter-dkim-signer
-RUN mv /usr/local/share/man/man8/filter-dkim-signer.8 /usr/share/man/man8/filter-dkim-signer.8
-RUN mv /usr/local/share/man/man3/filter_api.3 /usr/share/man/man3/filter_api.3
-
 
 WORKDIR /
 
