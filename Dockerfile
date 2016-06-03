@@ -15,10 +15,7 @@ RUN  cd opensmtpd-extras* && \
     ./configure --libexecdir=/usr/lib/x86_64-linux-gnu \
     --mandir=/usr/share/man \
     -with-libs \
-    -with-filter-dkim-signer \
-    --with-scheduler-ram \
-    --with-filter-stub \
-    --with-queue-ram && \
+    -with-filter-dkim-signer && \
     make all && \
     make install
 
