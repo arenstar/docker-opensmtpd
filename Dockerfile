@@ -12,7 +12,15 @@ RUN apt-get update && apt-get install -y \
 RUN wget http://www.opensmtpd.org/archives/opensmtpd-extras-latest.tar.gz
 RUN tar xzvf opensmtpd-extras-latest.tar.gz
 RUN  cd opensmtpd-extras* && \
-    ./configure --with-filter-dkim-signer && \
+    ./configure \ 
+        --libexecdir=/usr/lib/x86_64-linux-gnu \
+        --mandir=/usr/share/man \
+        --with-libs \
+        --with-filter-dkim-signer \
+        --with-scheduler-ram \
+        --with-pie \
+        --with-filter-stub \
+        --with-queue-ram && \
     make && \
     make install
 
